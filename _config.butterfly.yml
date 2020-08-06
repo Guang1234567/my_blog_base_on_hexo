@@ -7,15 +7,17 @@
 #   name || link || icon
 
 menu:
-  # Home: / || fas fa-home
-  # Archives: /archives/ || fas fa-archive
-  # Tags: /tags/ || fas fa-tags
-  # Categories: /categories/ || fas fa-folder-open
-  # List||fas fa-list:
-  #   - Music || /music/ || fas fa-music
-  #   - Movie || /movies/ || fas fa-video
-  # Link: /link/ || fas fa-link
-  # About: /about/ || fas fa-heart
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Tags: /tags/ || fas fa-tags
+  Categories: /categories/ || fas fa-folder-open
+  Entretimiento||fas fa-heartbeat:
+    - Music || /music/ || fas fa-music
+    - Movie || /movies/ || fas fa-video
+    - Gallery || /gallery/ || fas fa-images
+  MessageBoard: /messageboard/ || fas fa-comment-dots  
+  Link: /link/ || fas fa-link
+  About: /about/ || fas fa-heart
 
 # Code Blocks (代碼相關)
 # --------------------------------------
@@ -31,15 +33,18 @@ code_word_wrap: true
 copy:
   enable: true
   copyright:
-    enable: false
+    enable: true
     limit_count: 50
 
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+   fab fa-github: https://github.com/Guang1234567 || Github
+   fas fa-envelope: mailto:lihansey163@163.com || Email
+   fas fa-rss: /atom.xml || RSS
+   fab fa-weixin: https://github.com/Guang1234567 || WeChat
+   fab fa-instagram-square: https://github.com/Guang1234567 || Instagram
 
 # search (搜索)
 # --------------------------------------
@@ -57,7 +62,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   labels:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}" # if there are no result
@@ -76,7 +81,7 @@ mathjax:
 
 # KaTeX
 katex:
-  enable: false
+  enable: true
   per_page: false
   hide_scrollbar: true
 
@@ -89,7 +94,7 @@ favicon: /img/favicon.png
 # Avatar (頭像)
 avatar:
   img: /img/avatar.png
-  effect: false
+  effect: true
 
 # the banner image of home page
 index_img:
@@ -134,15 +139,15 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
   background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
+    date_type: both # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     categories: true # true or false 主頁是否顯示分類
-    tags: false # true or false 主頁是否顯示標籤
+    tags: true # true or false 主頁是否顯示標籤
     label: true # true or false 顯示描述性文字
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
@@ -152,7 +157,7 @@ post_meta:
 
 # wordcount (字數統計)
 wordcount:
-  enable: false
+  enable: true
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -182,23 +187,23 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: /img/avatar.png
+      link:
+      text: wechat
+    - img: /img/avatar.png
+      link:
+      text: alipay
 
 # Related Articles
 related_post:
   enable: true
   limit: 6 # Number of posts displayed
-  date_type: created # or created or updated 文章日期顯示創建日或者更新日
+  date_type: updated # or created or updated 文章日期顯示創建日或者更新日
 
 # figcaption (圖片描述文字)
-photofigcaption: false
+photofigcaption: true
 
 # anchor
 # when you scroll in post, the URL will update according to header id.
@@ -206,7 +211,7 @@ anchor: false
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # style: simple/flat
   limit_day: 500 # When will it be shown
   position: top # position: top/bottom
@@ -248,6 +253,7 @@ comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Utterances/Facebook Comments
   use:
+    - Gitalk
   # - Valine
   # - Disqus
   text: true # Display the comment name next to the button
@@ -281,8 +287,8 @@ livere:
 # gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id:
-  client_secret:
+  client_id: 911485d89fb627567b75
+  client_secret: 97d3655d8dc34c74aaeb2fa6004ecdb04288550f
   repo:
   owner:
   admin:
@@ -333,7 +339,7 @@ facebook_comments:
 
 # Chat Button [recommend]
 # It will create a button in the bottom right corner of website, and hide the origin button
-chat_btn: false
+chat_btn: true
 
 # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
 chat_hide_show: false
@@ -341,8 +347,8 @@ chat_hide_show: false
 # chatra
 # https://chatra.io/
 chatra:
-  enable: false
-  id:
+  enable: true
+  id: nhsdS77HArcjhaBMq
 
 # tidio
 # https://www.tidio.com/
@@ -374,12 +380,12 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: 
+  custom_text: ^(*￣(oo)￣) Good Bye  ♥(✿ฺ´∀`✿ฺ)ﾉ 
   copyright: true # Copyright of theme and framework
   ICP: # Chinese ICP License
-    enable: false
-    url:
-    text:
+    enable: true
+    url: http://www.beian.miit.gov.cn/state/outPortal/loginPortal.action
+    text: 冰岛ICP備xxxx
     icon: /img/icp.png
 
 # Analysis
@@ -476,7 +482,7 @@ tag_ui: # 留空或 index
 background:
 
 # Show the footer background image (same as top_img)
-footer_bg: false
+footer_bg: true
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
@@ -491,12 +497,12 @@ canvas_ribbon:
   size: 150
   alpha: 0.6
   zIndex: -1
-  click_to_change: false
+  click_to_change: true
   mobile: false
 
 # Dynamic ribbon (動態彩帶)
 canvas_ribbon_piao:
-  enable: false
+  enable: true
   mobile: false
 
 # canvas_nest
@@ -512,13 +518,13 @@ canvas_nest:
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true # open particle animation (冒光特效)
   shake: true #  open shake (抖動特效)
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999 # -1 or 9999
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
@@ -539,8 +545,8 @@ display_mode: light
 
 # Beautify (美化頁面顯示)
 beautify:
-  enable: false
-  field: post # site/post
+  enable: true
+  field: site # site/post
   title-prefix-icon: '\f0c1'
   title-prefix-icon-color: '#F47466'
 
@@ -564,7 +570,7 @@ hr_icon:
 
 # the subtitle on homepage (主頁subtitle)
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect (打字效果)
   effect: true
   # loop (循環打字)
@@ -582,9 +588,11 @@ subtitle:
   # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
+    - 今日事&#44;今日毕
+    - Never put off till tomorrow what you can do today
 
 # Loading Animation (加載動畫)
-preloader: false
+preloader: true
 
 # aside (側邊欄)
 # --------------------------------------
@@ -599,10 +607,10 @@ aside:
     button:
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/Guang1234567
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 如果你在使用中遇到問題，請到 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly/issues" style="color:#49b1f5">Github Issues</a> 或者 <a href="/messageboard/" style="color:#49b1f5">留言板</a> 進行反饋，你也可以加入 QQ 群（由於 QQ 群只能有 500 人，會定時清理潛水的人）<div class="announcement-button"> <a class="button--animated" href="https://jq.qq.com/?_wv=1027&amp;k=KU9105XR" rel="external nofollow noreferrer" target="_blank">加入 1 群 👍</a> <a class="button--animated" href="https://jq.qq.com/?_wv=1027&amp;k=r1nK0DQz" rel="external nofollow noreferrer" target="_blank">加入 2 群 👍</a> </div>
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -614,7 +622,7 @@ aside:
   card_tags:
     enable: true
     limit: 40 # if set 0 will show all
-    color: false
+    color: true
   card_archives:
     enable: true
     type: monthly # yearly or monthly
@@ -633,15 +641,15 @@ busuanzi:
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: false
-  publish_date:
+  enable: true
+  publish_date: 6/7/2010 00:00:00 
 
 # Bottom right button (右下角按鈕)
 # --------------------------------------
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -665,7 +673,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: 1
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------
@@ -685,7 +693,7 @@ fancybox: true
 # mermaid
 # see https://github.com/knsv/mermaid
 mermaid:
-  enable: false
+  enable: true
   # built-in themes: default/forest/dark/neutral
   theme: default
 
@@ -721,8 +729,8 @@ aplayerInject:
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
-  position: bottom-left
+  enable: true
+  position: top-left
   bg_light: '#49b1f5' # The background color of Toast Notification in light mode
   bg_dark: '#121212' # The background color of Toast Notification in dark mode
 
@@ -748,14 +756,14 @@ lazyload:
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
-# pwa:
-#   enable: false
-#   manifest: /image/pwa/manifest.json
-#   theme_color: "#fff"
-#   apple_touch_icon: /image/pwa/apple-touch-icon.png
-#   favicon_32_32: /image/pwa/32.png
-#   favicon_16_16: /image/pwa/16.png
-#   mask_icon: /image/pwa/safari-pinned-tab.svg
+pwa:
+  enable: true
+  manifest: /image/pwa/manifest.json
+  theme_color: "#fff"
+  apple_touch_icon: /image/pwa/apple-touch-icon.png
+  favicon_32_32: /image/pwa/32.png
+  favicon_16_16: /image/pwa/16.png
+  mask_icon: /image/pwa/safari-pinned-tab.svg
 
 # Disable Baidu transformation on mobile devices (禁止百度轉碼)
 disable_baidu_transformation: true

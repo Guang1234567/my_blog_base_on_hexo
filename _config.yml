@@ -9,6 +9,7 @@ description: ''
 keywords:
 author: Guang1234567
 language: en
+# language: zh-CN
 timezone: ''
 
 # URL
@@ -20,6 +21,10 @@ permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+# permalink: posts/:abbrlink.html   # 此处可以自己设置，也可以直接使用 :abbrlink.html
+abbrlink:
+  alg: crc32                      # 算法选项： crc16(default) and crc32
+  rep: hex  
 
 # Directory
 source_dir: source
@@ -41,21 +46,21 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
   enable: true
   line_number: false
   auto_detect: false
-  tab_replace: ''
+  tab_replace: '    '
   wrap: true
   hljs: false
 prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
+  tab_replace: '    '
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -106,5 +111,58 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: git@github.com:Guang1234567/Guang1234567.github.io.git
-  branch: hexo
+  repo: 
+    github: git@github.com:Guang1234567/Guang1234567.github.io.git
+    github2: git@github.com:Guang1234567/my_blog_base_on_hexo.git
+  branch: gh-pages
+
+# https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
+aplayer:
+  meting: true
+
+# https://github.com/next-theme/hexo-generator-indexed#隐藏特定分类中的文章-hide-articles-in-specified-categories
+# 在 Hexo 的 _config.yml 中可以通过 hide_categories 选项设置隐藏某个分类下的文章，例如：
+hide_categories:
+  - categorie1
+  - categorie2
+
+# https://demo.jerryc.me/posts/ceeb73f/#Math-數學
+markdown_it_plus:
+  plugins:
+    - plugin:
+      name: '@neilsustc/markdown-it-katex'
+      enable: true
+      options:
+        strict: false
+
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+
+# offline config passed to sw-precache.
+offline:
+  maximumFileSizeToCacheInBytes: 10485760 # 緩存的最大文件大小，以字節為單位
+  staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,webp,eot,ttf,woff,woff2}
+  # 靜態文件合集，如果你的站點使用了例如webp格式的文件，請將文件類型添加進去。
+  stripPrefix: public
+  verbose: true
+  runtimeCaching:
+    # CDNs - should be cacheFirst, since they should be used specific versions so should not change
+    - urlPattern: /* # 如果你需要加載CDN資源，請配置該選項，如果沒有，可以不配置。
+      handler: cacheFirst
+      options:
+        origin: https://guang1234567.github.io # 可替換成你的 url
