@@ -136,10 +136,18 @@ More info: [音乐](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/do
 
 ## 颜色标签
 
-
-```markdown
+`````markdown
 {% note default %}
 default 提示块标籤
+第二行
+第三行
+第四行
+
+```markdown 请在 markdown 文档中插入下面代码 https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729 trial.key
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
+```
+
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
 {% endnote %}
 
 {% note primary no-icon %}
@@ -161,10 +169,19 @@ warning 提示块标籤
 {% note danger %}
 danger 提示块标籤
 {% endnote %}
-```
+`````
 
 {% note default %}
 default 提示块标籤
+第二行
+第三行
+第四行
+
+```markdown 请在 markdown 文档中插入下面代码 https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729 trial.key
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
+```
+
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
 {% endnote %}
 
 {% note primary no-icon %}
