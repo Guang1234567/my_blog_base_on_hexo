@@ -55,6 +55,35 @@ $ hexo deploy
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
+## 代码块进阶
+
+- 某几行高亮
+
+{% codeblock lang:bash 高亮代码块里面的某几行 https://hexo.io/zh-cn/docs/tag-plugins.html#%E4%BB%A3%E7%A0%81%E5%9D%97 高亮教程链接地址 mark:3,5-7%}
+$ hexo server
+
+我是代码高亮行示例3
+我是代码高亮行示例4
+我是代码高亮行示例5
+我是代码高亮行示例6
+我是代码高亮行示例7
+{% endcodeblock %}
+
+- gist
+
+```markdown 请在 markdown 文档中插入下面代码 https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729 trial.key
+{% gist b562756ea42cb36d21c54aa656798729 %}
+```
+
+{% gist b562756ea42cb36d21c54aa656798729 %}
+
+or
+
+```markdown 请在 markdown 文档中插入下面代码 https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729 trial.key
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
+```
+
+<script src="https://gist.github.com/Guang1234567/b562756ea42cb36d21c54aa656798729.js"></script>
 
 ## 音乐
 
@@ -72,24 +101,24 @@ More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
 有关  `{% meting %}`  的选项列表如下:
 
-选项            | 默认值        | 描述                                                   
-------------- | ---------- | -----------------------------------------------------
-id            | **必须值**    | 歌曲 id / 播放列表 id / 相册 id / 搜索关键字                      
-server        | **必须值**    | 音乐平台: `netease`, `tencent`, `kugou`, `xiami`, `baidu`
-type          | **必须值**    | `song`, `playlist`, `album`, `search`, `artist`      
-fixed         | `false`    | 开启固定模式                                               
-mini          | `false`    | 开启迷你模式                                               
-loop          | `all`      | 列表循环模式：`all`, `one`,`none`                           
-order         | `list`     | 列表播放模式： `list`, `random`                             
-volume        | 0.7        | 播放器音量                                                
-lrctype       | 0          | 歌词格式类型                                               
-listfolded    | `false`    | 指定音乐播放列表是否折叠                                         
-storagename   | `metingjs` | LocalStorage 中存储播放器设定的键名                             
-autoplay      | `true`     | 自动播放，移动端浏览器暂时不支持此功能                                  
-mutex         | `true`     | 该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停                   
-listmaxheight | `340px`    | 播放列表的最大长度                                            
-preload       | `auto`     | 音乐文件预载入模式，可选项： `none`, `metadata`, `auto`            
-theme         | `#ad7a86`  | 播放器风格色彩设置                                            
+选项          | 默认值     | 描述
+--------------|------------|------------------------------------------------------
+id            | **必须值** | 歌曲 id / 播放列表 id / 相册 id / 搜索关键字
+server        | **必须值** | 音乐平台: `netease`, `tencent`, `kugou`, `xiami`, `baidu`
+type          | **必须值** | `song`, `playlist`, `album`, `search`, `artist`
+fixed         | `false`    | 开启固定模式
+mini          | `false`    | 开启迷你模式
+loop          | `all`      | 列表循环模式：`all`, `one`,`none`
+order         | `list`     | 列表播放模式： `list`, `random`
+volume        | 0.7        | 播放器音量
+lrctype       | 0          | 歌词格式类型
+listfolded    | `false`    | 指定音乐播放列表是否折叠
+storagename   | `metingjs` | LocalStorage 中存储播放器设定的键名
+autoplay      | `true`     | 自动播放，移动端浏览器暂时不支持此功能
+mutex         | `true`     | 该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
+listmaxheight | `340px`    | 播放列表的最大长度
+preload       | `auto`     | 音乐文件预载入模式，可选项： `none`, `metadata`, `auto`
+theme         | `#ad7a86`  | 播放器风格色彩设置
 
 More info: [音乐](https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md)
 
